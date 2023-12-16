@@ -1,0 +1,42 @@
+/*  HeroSection */
+.hero-image {
+  z-index: -1;
+  position: relative;
+
+  & img {
+    width: 100vw;
+    max-height: 60vh;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.hero-content {
+  position: absolute;
+  top: 50%; /* Adjust positioning as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; /* Adjust text color for contrast with image */
+  text-align: center;
+
+  & .hero-headline {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  & .hero-subhead {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  & .hero-cta {
+    /* Style your button as desired */
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}

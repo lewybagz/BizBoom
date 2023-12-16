@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  background-color: #090909;
+  min-width: 100dvw;
+  min-height: 100dvh;
+}
