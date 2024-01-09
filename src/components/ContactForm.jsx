@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactModal from "react-modal";
 import emailjs from "emailjs-com";
 const serviceID = "service_dqns5bn";
@@ -12,9 +12,22 @@ import "../styles/CustomButton.css";
 
 export default function ContactForm() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const formFields = [
     { name: "name", label: "Name", required: true },
@@ -82,15 +95,21 @@ export default function ContactForm() {
       <fieldset tabIndex="-1">
         <h1>Get in touch!</h1>
         <p className="required-indicator"> Indicates Required Field</p>
-        <li>
-          <select {...register("serviceOption", { required: true })}>
-            <option value="" disabled selected>
-              -- Please choose an option --
-            </option>
-            <option value="Request Quote">Request Quote</option>
-            <option value="Other">Other</option>
-          </select>
-        </li>
+
+        <ul>
+          <li>
+            <select
+              {...register("serviceOption", { required: true })}
+              defaultValue=""
+            >
+              <option value="" disabled>
+                -- Please choose an option --
+              </option>
+              <option value="Request Quote">Request Quote</option>
+              <option value="Other">Other</option>
+            </select>
+          </li>
+        </ul>
         {formFields.map((field, index) => (
           <div
             className={`form-wrapper ${field.required ? "required" : ""}`}
@@ -163,7 +182,7 @@ export default function ContactForm() {
               outline: "none",
               padding: "20px",
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.25)",
-              width: "50%", // Set a width or max-width as needed
+              width: windowWidth <= 900 ? "90%" : "50%",
               maxHeight: "calc(100% - 80px)", // Make sure the modal is not taller than the screen
               boxSizing: "border-box", // Include padding and borders in the width and height
             },

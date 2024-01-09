@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap");
+
 /* Base setup for all elements */
 *,
 *:before,
@@ -33,6 +35,7 @@ button {
 .custom-btn,
 .custom-btn:link,
 .custom-btn:visited {
+  font-family: "Montserrat", sans-serif;
   color: #333;
   font-size: 0.6em;
   letter-spacing: 0.1em;

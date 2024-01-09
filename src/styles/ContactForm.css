@@ -295,6 +295,11 @@ footer span {
 
 /* MQ
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 900px) {
+  .contact-form {
+    margin-bottom: 60px;
+  }
+}
 @media screen and (min-width: 600px) {
   .contact-form .grid {
     display: grid;

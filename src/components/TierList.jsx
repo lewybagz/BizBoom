@@ -56,9 +56,11 @@ export default function TiersList() {
             Everything in <span>The Spark +</span>
           </li>
           <li>
-            <span>Advanced GoHighLevel Automation</span>: Automate appointments,
-            customer interactions with chatbots, and design multi-step email
-            campaigns.
+            <span>
+              <span className="advanced">Advanced </span>GoHighLevel Automation
+            </span>
+            : Automate appointments, customer interactions with chatbots, and
+            design multi-step email campaigns.
           </li>
           <li>
             <span>Website Maintenance</span>: Benefit from ongoing website

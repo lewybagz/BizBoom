@@ -52,22 +52,22 @@ const TermsAndConditions = () => {
       <p>
         The following organizations may link to our Website without prior
         written approval:
-        <ul>
-          <li>Government agencies;</li>
-          <li>Search engines;</li>
-          <li>News organizations;</li>
-          <li>
-            Online directory distributors may link to our Website in the same
-            manner as they hyperlink to the Websites of other listed businesses;
-            and
-          </li>
-          <li>
-            System wide Accredited Businesses except soliciting non-profit
-            organizations, charity shopping malls, and charity fundraising
-            groups which may not hyperlink to our Web site.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>Government agencies;</li>
+        <li>Search engines;</li>
+        <li>News organizations;</li>
+        <li>
+          Online directory distributors may link to our Website in the same
+          manner as they hyperlink to the Websites of other listed businesses;
+          and
+        </li>
+        <li>
+          System wide Accredited Businesses except soliciting non-profit
+          organizations, charity shopping malls, and charity fundraising groups
+          which may not hyperlink to our Web site.
+        </li>
+      </ul>
 
       <h3>iFrames</h3>
       <p>
@@ -109,24 +109,25 @@ const TermsAndConditions = () => {
         To the maximum extent permitted by applicable law, we exclude all
         representations, warranties and conditions relating to our website and
         the use of this website. Nothing in this disclaimer will:
-        <ul>
-          <li>
-            Limit or exclude our or your liability for death or personal injury;
-          </li>
-          <li>
-            Limit or exclude our or your liability for fraud or fraudulent
-            misrepresentation;
-          </li>
-          <li>
-            Limit any of our or your liabilities in any way that is not
-            permitted under applicable law; or
-          </li>
-          <li>
-            Exclude any of our or your liabilities that may not be excluded
-            under applicable law.
-          </li>
-        </ul>
       </p>
+
+      <ul>
+        <li>
+          Limit or exclude our or your liability for death or personal injury;
+        </li>
+        <li>
+          Limit or exclude our or your liability for fraud or fraudulent
+          misrepresentation;
+        </li>
+        <li>
+          Limit any of our or your liabilities in any way that is not permitted
+          under applicable law; or
+        </li>
+        <li>
+          Exclude any of our or your liabilities that may not be excluded under
+          applicable law.
+        </li>
+      </ul>
 
       <h3>Amendments</h3>
       <p>
