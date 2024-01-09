@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="logo">
-        <img src="/assets/bizboomLogo.png" alt="BizBoom Logo" />
+        <img src="/BizBoom/assets/bizboomLogo.png" alt="BizBoom Logo" />
       </div>
       <div className="dont-scroll">
         <HeroSection />
