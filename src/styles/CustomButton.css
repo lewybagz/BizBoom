@@ -1,0 +1,114 @@
+/* Base setup for all elements */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define color variables */
+:root {
+  --cyan: #0505a9;
+  --dark: #ffffff;
+  --border-width: 2px;
+  --border-color: #c75842;
+}
+
+/* Button container styles */
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+
+button {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Blob Button combined with Border Animations */
+.custom-btn,
+.custom-btn:link,
+.custom-btn:visited {
+  color: #333;
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 60%;
+  position: relative;
+  background-color: transparent;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: -1px;
+    height: 4.5em;
+    width: 0;
+    border: 1px solid #000000;
+    z-index: 1;
+    transition: inherit;
+  }
+
+  &:after {
+    left: auto;
+    right: -1em;
+  }
+
+  &:hover {
+    border-color: #000000;
+    transition: border-color 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    color: white;
+
+    &:after,
+    &:before {
+      right: -2px;
+      transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      opacity: 0;
+    }
+
+    &:before {
+      left: -2px;
+      right: auto;
+    }
+    & .btn-background {
+      width: 100%; /* Expand the width to full */
+      opacity: 1; /* Make it fully visible */
+    }
+  }
+  & .btn-background {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; /* Start with zero width */
+    height: 100%;
+    background-color: #c75842;
+    z-index: -1;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Start with zero opacity */
+  }
+
+  & .custom-btn:hover .btn-background {
+    left: 0; /* Slide in the background */
+  }
+}
+.custom-btn > * {
+  position: relative;
+  z-index: 2;
+}
+.hero-cta {
+  position: relative;
+  top: -60px;
+  font-family: "Montserrat", sans-serif;
+}

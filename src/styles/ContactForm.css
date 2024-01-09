@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap");
+
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --white: #afafaf;
+  --red: #e31b23;
+  --bodyColor: #292a2b;
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+}
+
+/* Remove native arrow on IE */
+select::-ms-expand {
+  display: none;
+}
+fieldset {
+  border: none;
+}
+
+/*Remove dotted outline from selected option on Firefox*/
+/*https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002*/
+/*We use !important to override the color set for the select on line 99*/
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 var(--white);
+}
+
+textarea {
+  resize: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bodyColor);
+  color: var(--white);
+  margin: 1.5rem 0;
+}
+
+.contact-form *:required {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 15px 15px;
+}
+.required-indicator {
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px #00000020;
+  backdrop-filter: blur(40px);
+  background-color: #ffffff85;
+}
+
+/* FORM ELEMENTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact-form h1 {
+  margin-bottom: 1.5rem;
+  color: hsl(0, 0%, 10%);
+}
+.contact-form p {
+  color: hsl(0, 0%, 10%);
+}
+#terms-label {
+  color: hsl(0, 0%, 10%);
+}
+
+.contact-form li,
+.contact-form input {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form select,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+select,
+#message,
+#name,
+#email,
+#phone {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+
+#message {
+  min-height: 100px;
+}
+
+.contact-form textarea {
+  height: 170px;
+}
+
+.contact-form ::placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.contact-form select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form button:enabled:hover,
+.contact-form button:focus,
+.contact-form input[type="checkbox"]:focus + label {
+  background: var(--bgFormElsFocus);
+}
+
+.contact-form select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: scale(1.02);
+}
+
+.contact-form *:required,
+.contact-form select {
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 15px 15px;
+}
+
+.contact-form *:required {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+.contact-form select {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/down.svg);
+}
+
+.contact-form *:disabled {
+  cursor: default;
+  filter: blur(2px);
+}
+
+/* FORM BTNS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact-form .required-msg {
+  display: none;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg)
+    no-repeat center left / 15px 15px;
+  padding-left: 20px;
+}
+
+.contact-form .btn-grid {
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.2s;
+}
+
+.contact-form button {
+  font-weight: bold;
+}
+
+.contact-form button > * {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.contact-form button .back {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-110%, -50%);
+}
+
+.contact-form button:enabled:hover .back,
+.contact-form button:focus .back {
+  transform: translate(-50%, -50%);
+}
+
+.contact-form button:enabled:hover .front,
+.contact-form button:focus .front {
+  transform: translateX(110%);
+}
+
+/* CUSTOM CHECKBOX
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact-form input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.contact-form input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 2rem;
+  transition: background 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.contact-form input[type="checkbox"] + label::before,
+.contact-form input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+}
+
+.contact-form input[type="checkbox"] + label::before {
+  left: 0;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--white);
+}
+
+.contact-form input[type="checkbox"]:checked + label::before {
+  background: var(--red);
+}
+
+.contact-form input[type="checkbox"]:checked + label::after {
+  left: 7px;
+  top: 7px;
+  width: 6px;
+  height: 14px;
+  border-bottom: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  transform: rotate(45deg);
+}
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  font-size: 1rem;
+  text-align: right;
+  backface-visibility: hidden;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer span {
+  color: var(--red);
+}
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 600px) {
+  .contact-form .grid {
+    display: grid;
+    grid-gap: 1.5rem;
+  }
+
+  .contact-form .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form .grid-3 {
+    grid-template-columns: auto auto auto;
+    align-items: center;
+  }
+
+  .contact-form .grid > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .contact-form .required-msg {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 541px) {
+  .contact-form input[type="checkbox"] + label::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .contact-form input[type="checkbox"]:checked + label::after {
+    top: 3px;
+  }
+}
+& .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+& .success-message {
+  color: green;
+  font-size: 14px;
+  text-align: center;
+}

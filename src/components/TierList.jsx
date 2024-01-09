@@ -1,68 +1,102 @@
-// import css
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 export default function TiersList() {
+  const tierVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.3 });
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.3 });
+  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.3 });
   return (
     <section className="tiers-section">
+      <div className="big-circle"></div>
       <h2>Our Service Tiers</h2>
 
-      <div className="tier">
+      <motion.div
+        className="tier tier1"
+        ref={ref1}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={tierVariants}
+      >
         <h3>The Spark</h3>
         <p>
           Ignite your online presence with a basic website and essential
           marketing tools.
         </p>
-        <ul>
+        <ul className="rocket-list">
           <li>
-            Free Website Design: Choose from modern curated templates,
-            responsive and mobile-friendly.
+            <span>Free Website Design</span>: Choose from modern curated
+            templates, responsive and mobile-friendly.
           </li>
           <li>
-            GoHighLevel Essentials: Capture leads via forms, connect with email
-            marketing tools, and schedule basic email sequences.
+            <span>GoHighLevel Essentials</span>: Capture leads via forms,
+            connect with email marketing tools, and schedule basic email
+            sequences.
           </li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="tier">
+      <motion.div
+        className="tier tier2"
+        ref={ref2}
+        initial="hidden"
+        animate={inView2 ? "visible" : "hidden"}
+        variants={tierVariants}
+      >
         <h3>The Fuse</h3>
         <p>
           Aim for the Sky with website maintenance and expanded GoHighLevel
           features.
         </p>
-        <ul>
-          <li>Everything in The SparK +</li>
+        <ul className="rocket-list">
           <li>
-            Advanced GoHighLevel Automation: Automate appointments, customer
-            interactions with chatbots, and design multi-step email campaigns.
+            Everything in <span>The Spark +</span>
           </li>
           <li>
-            Website Maintenance: Benefit from ongoing website updates and
-            security checks.
+            <span>Advanced GoHighLevel Automation</span>: Automate appointments,
+            customer interactions with chatbots, and design multi-step email
+            campaigns.
+          </li>
+          <li>
+            <span>Website Maintenance</span>: Benefit from ongoing website
+            updates and security checks.
           </li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="tier">
+      <motion.div
+        className="tier tier3"
+        ref={ref3}
+        initial="hidden"
+        animate={inView3 ? "visible" : "hidden"}
+        variants={tierVariants}
+      >
         <h3>The Big Boom</h3>
         <p>
           Reach the peak of online success with a content creation, full
           marketing suite, and personalized consultancy.
         </p>
-        <ul>
-          <li>Everything in The Climb +</li>
+        <ul className="rocket-list">
           <li>
-            Premium Website Design: Get a custom website design tailored to your
-            brand and needs.
+            Everything in <span>The Climb +</span>
           </li>
           <li>
-            Content Creation: Receive website content or blog posts to boost
-            your online presence.
+            <span>Premium Website Design</span>: Get a custom website design
+            tailored to your brand and needs.
           </li>
           <li>
-            GoHighLevel Pro Features: Unlock CRM functionality, advanced
-            reporting, and custom development options.
+            <span>Content Creation</span>: Receive website content or blog posts
+            to boost your online presence
+          </li>
+          <li>
+            <span>GoHighLevel Pro Features</span>: Unlock CRM functionality,
+            advanced reporting, and custom development options.
           </li>
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }
