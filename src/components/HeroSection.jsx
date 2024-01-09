@@ -1,3 +1,4 @@
+import { scroller } from "react-scroll";
 import { CustomButton } from "./CustomButton";
 import "../styles/CustomButton.css";
 export default function HeroSection() {
@@ -13,7 +14,17 @@ export default function HeroSection() {
             online success.
           </p>
         </div>
-        <CustomButton className="hero-cta" text="Get Started Today" />
+        <CustomButton
+          className="hero-cta"
+          text="Get Started Today"
+          onClick={() =>
+            scroller.scrollTo("contactForm", {
+              duration: 800,
+              delay: 0,
+              smooth: "easeInOutQuart",
+            })
+          }
+        />
       </div>
     </section>
   );
