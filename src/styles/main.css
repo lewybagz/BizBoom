@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 .app {
   background: linear-gradient(to right, #7fcae5, #a789e9);
@@ -11,6 +12,7 @@ body {
   text-align: center;
   padding: 60px 20px;
   min-width: 100dvw;
+  overflow-y: auto;
 }
 .logo {
   position: fixed;
@@ -395,7 +397,6 @@ body {
     width: 100dvw;
     margin: 0 auto;
     /* margin-bottom: 20px; */
-    overflow-x: hidden;
   }
   .logo {
     top: 0;

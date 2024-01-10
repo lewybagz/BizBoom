@@ -165,10 +165,10 @@ export default function ContactForm() {
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.75)",
-              zIndex: 1000, // Ensure it's on top
+              zIndex: 1000,
             },
             content: {
-              position: "fixed", // Override the inline style with 'fixed'
+              position: "fixed",
               top: "50%",
               left: "50%",
               right: "auto",
@@ -183,8 +183,8 @@ export default function ContactForm() {
               padding: "20px",
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.25)",
               width: windowWidth <= 900 ? "90%" : "50%",
-              maxHeight: "calc(100% - 80px)", // Make sure the modal is not taller than the screen
-              boxSizing: "border-box", // Include padding and borders in the width and height
+              maxHeight: "calc(100% - 80px)",
+              boxSizing: "border-box",
             },
           }}
         >
