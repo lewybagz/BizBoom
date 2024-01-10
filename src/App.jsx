@@ -1,4 +1,3 @@
-import { Element } from "react-scroll";
 import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeatureSection";
 import ContactSection from "./components/ContactForm";
@@ -25,9 +24,9 @@ export default function App() {
         <div className="contact-info-section">
           <ContactInfo />
         </div>
-        <Element className="form-section" name="contactForm">
+        <div className="form-section" name="contactForm" id="contactForm">
           <ContactSection />
-        </Element>
+        </div>
       </div>
     </div>
   );
