@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap");
-
+body,
+html {
+  cursor: url("/BizBoom/assets/cursor.png"), auto;
+}
 body {
   margin: 0;
   padding: 0;
@@ -81,8 +84,8 @@ body {
     color: black;
     background-image: linear-gradient(
       90deg,
-      #2c2b2b,
       #000000,
+      #2c2b2b,
       #747272,
       #bdbcbc,
       #dddddd
@@ -173,6 +176,7 @@ body {
       height: auto;
       margin-bottom: 20px;
       animation: imgfloat 3s ease-in-out infinite;
+      pointer-events: none;
     }
     &:nth-child(1) img {
       animation-delay: 0s; /* No delay for the first image */

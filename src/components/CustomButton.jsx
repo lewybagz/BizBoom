@@ -6,6 +6,7 @@ export const CustomButton = ({
   tabIndex,
   disabled,
   className,
+  type,
 }) => {
   return (
     <div className="buttons">
@@ -14,6 +15,7 @@ export const CustomButton = ({
         onClick={onClick}
         tabIndex={tabIndex}
         disabled={disabled}
+        type={type}
       >
         <span className="btn-background"></span>
         {text}
@@ -28,4 +30,5 @@ CustomButton.propTypes = {
   tabIndex: propTypes.number,
   disabled: propTypes.bool,
   className: propTypes.string,
+  type: propTypes.string,
 };

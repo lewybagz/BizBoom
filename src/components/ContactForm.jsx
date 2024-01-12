@@ -56,18 +56,9 @@ export default function ContactForm() {
     phone: "",
   });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    const formData = {
-      name: register("name").value,
-      email: register("email").value,
-      message: register("message").value,
-      phone: register("phone").value,
-    };
-
+  const onSubmit = (data) => {
     emailjs
-      .sendForm(serviceID, templateID, formData, publicKey)
+      .sendForm(serviceID, templateID, data, publicKey)
       .then(() => {
         setMessageState((prevState) => ({
           ...prevState,
@@ -193,6 +184,7 @@ export default function ContactForm() {
         </ReactModal>
 
         <CustomButton
+          type="submit"
           text="Blast Off"
           onClick={() => handleSubmit(onSubmit)()}
           tabIndex={fieldIndex + formFields.length}
