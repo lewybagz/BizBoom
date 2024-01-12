@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
 
 export default function TiersList() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const tierVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    hover1: { scale: 1.1 },
+    hover2: { scale: 1.2 },
+    hover3: { scale: 1.3 },
   };
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.3 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -19,6 +35,7 @@ export default function TiersList() {
         ref={ref1}
         initial="hidden"
         animate={inView1 ? "visible" : "hidden"}
+        whileHover={!isMobile ? "hover1" : undefined}
         variants={tierVariants}
       >
         <h3>The Spark</h3>
@@ -44,6 +61,7 @@ export default function TiersList() {
         ref={ref2}
         initial="hidden"
         animate={inView2 ? "visible" : "hidden"}
+        whileHover={!isMobile ? "hover2" : undefined}
         variants={tierVariants}
       >
         <h3>The Fuse</h3>
@@ -74,6 +92,7 @@ export default function TiersList() {
         ref={ref3}
         initial="hidden"
         animate={inView3 ? "visible" : "hidden"}
+        whileHover={!isMobile ? "hover3" : undefined}
         variants={tierVariants}
       >
         <h3>The Big Boom</h3>

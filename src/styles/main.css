@@ -66,36 +66,55 @@ body {
   }
 }
 /*  HeroSection */
+.hero-content {
+  & h2 {
+    margin-bottom: 10px;
+  }
 
-.hero-text {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
+  & .hero-text {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-.hero-headline {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
+  & .hero-headline {
+    color: black;
+    background-image: linear-gradient(
+      90deg,
+      #2c2b2b,
+      #000000,
+      #747272,
+      #bdbcbc,
+      #dddddd
+    );
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background-clip: text;
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb,
+      4px 4px 0 #b9b9b9, 5px 5px 0 #aaa, 6px 6px 1px rgba(0, 0, 0, 0.1),
+      0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  }
 
-.hero-subhead {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  color: transparent;
-  margin-bottom: 30px;
-  font-weight: 800;
-  background-clip: text;
-  background-image: linear-gradient(
-    90deg,
-    #000000,
-    #f0f0f0,
-    #000000,
-    #000000,
-    #000000
-  );
-  background-size: 200% 100%; /* Extend the background size */
-  animation: shimmer 6s linear infinite; /* Apply the animation */
+  & .hero-subhead {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    color: transparent;
+    font-weight: 800;
+    background-clip: text;
+    background-image: linear-gradient(
+      90deg,
+      #000000,
+      #f0f0f0,
+      #000000,
+      #000000,
+      #000000
+    );
+    background-size: 200% 100%; /* Extend the background size */
+    animation: shimmer 6s linear infinite; /* Apply the animation */
+  }
 }
 @keyframes shimmer {
   0% {
@@ -215,6 +234,7 @@ body {
     background-color: #f0f0f0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
+    animation: transform 0.3s ease-in-out;
 
     & h3 {
       font-family: "Montserrat", sans-serif;
@@ -242,6 +262,11 @@ body {
   & .tier1 {
     align-self: flex-start; /* Align first tier to the left */
     border: 3px solid #b3e5fc;
+    animation: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   & .tier2 {
@@ -415,6 +440,7 @@ body {
     width: 100%;
     min-height: 130vh;
     position: static;
+    margin-bottom: 1em;
   }
   .features-section {
     position: static;
@@ -432,6 +458,9 @@ body {
         position: static;
       }
     }
+  }
+  .tiers {
+    margin-top: 1em;
   }
   .tiers-section {
     position: static;

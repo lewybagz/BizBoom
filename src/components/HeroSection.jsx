@@ -6,8 +6,11 @@ export default function HeroSection() {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-headline">
-            Thrive Online. Attract More Customers. Grow Your Local Business.
+            BizBoom: Digital Marketing Services for Local Businesses
           </h1>
+          <h2>
+            Thrive Online. Attract More Customers. Grow Your Local Business.
+          </h2>
           <p className="hero-subhead">
             Your one-stop shop for websites, marketing automation, and local
             online success.

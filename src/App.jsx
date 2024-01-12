@@ -11,9 +11,7 @@ export default function App() {
       <div className="logo">
         <img src="/BizBoom/assets/bizboomLogo.png" alt="BizBoom Logo" />
       </div>
-      <div className="dont-scroll">
-        <HeroSection />
-      </div>
+      <HeroSection />
       <div className="features">
         <FeaturesSection />
       </div>
